@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    .container
+        h1 Applicants
+        ul#applications.list-unstyled
+            for applicant in applicants
+                li
+                    h3(data-id="#{applicant._id}") #{applicant.name} 
+                    p bio: #{applicant.bio}
+                    p skills: #{applicant.skills}
+                    p years of experience: #{applicant.exp}
+                    p why I want this job: #{applicant.reason}
+                    button.btn.btn-default.delete-applicant Delete #{applicant.name}
